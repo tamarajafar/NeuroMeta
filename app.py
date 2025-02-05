@@ -141,6 +141,14 @@ def run_analysis_tab():
     st.sidebar.markdown("Built by Tamara Jafar")
     st.sidebar.markdown("[Contact Me](mailto:tjafar@usc.edu)")
 
+    st.markdown("---")
+    st.write(
+    "Follow on social media (https://x.com/TamaraJafar) !"
+)
+st.markdown(
+    "More infos and :star: at [tjafar@usc.edu]"
+)
+    
     if uploaded_file is not None:
         if analysis_type == "Basic Analysis":
             process_uploaded_file(uploaded_file, title, keywords, view_type, colormap)
