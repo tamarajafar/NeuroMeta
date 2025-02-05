@@ -139,8 +139,9 @@ def run_analysis_tab():
 # Add footer with author information
     st.sidebar.markdown("---")
     st.sidebar.markdown("Built by Tamara Jafar")
-    st.sidebar.markdown("[Contact Me for more info at [tjafar@usc.edu]] :star:")
-    st.sidebar.markdown("Follow me on social media (https://x.com/TamaraJafar) !")
+    st.sidebar.markdown("Contact Me for more info at tjafar@usc.edu")
+    st.sidebar.markdown("Follow me on [X ⭐](https://x.com/TamaraJafar)!")
+
     
     if uploaded_file is not None:
         if analysis_type == "Basic Analysis":
