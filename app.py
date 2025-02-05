@@ -82,11 +82,6 @@ def main():
     # Configure API email
     configure_api_email()
 
-    # Add footer with author information
-    st.sidebar.markdown("---")
-    st.sidebar.markdown("Built by Tamara Jafar")
-    st.sidebar.markdown("[Contact Me](mailto:tjafar@usc.edu)")
-
     # Create tabs for different functionalities
     tab1, tab2 = st.tabs(["Analysis", "Literature Search"])
 
@@ -140,6 +135,11 @@ def run_analysis_tab():
         "Color scheme",
         ["hot", "cold", "RdBu_r", "YlOrRd"]
     )
+    
+# Add footer with author information
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("Built by Tamara Jafar")
+    st.sidebar.markdown("[Contact Me](mailto:tjafar@usc.edu)")
 
     if uploaded_file is not None:
         if analysis_type == "Basic Analysis":
