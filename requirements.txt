@@ -7,7 +7,5 @@ matplotlib>=3.10.0
 sqlalchemy>=2.0.37
 biopython>=1.85
 requests>=2.32.3
-pycairo  # Required for cairo graphics rendering
-pygobject  # Required for GTK support
 opencv-python-headless  # Required for any GUI/image processing
 psycopg2  # Required for PostgreSQL 
