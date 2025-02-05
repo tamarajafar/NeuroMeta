@@ -325,65 +325,127 @@ def run_documentation_tab():
     """Display documentation and instructions"""
     st.header("Documentation")
     
-    st.subheader("Introduction")
-    st.write("""
-    The VBM/ALE Meta-Analysis Viewer is a powerful web application designed for neuroscience researchers 
-    to analyze and visualize brain imaging data. It supports both Voxel-Based Morphometry (VBM) and 
-    Activation Likelihood Estimation (ALE) meta-analyses.
+st.subheader("NeuroMeta: A VBM/ALE Meta-Analysis Viewer")
+
+st.write("""
+NeuroMeta is a **Voxel-Based Morphometry (VBM)** and **Activation Likelihood Estimation (ALE) Meta-Analysis Viewer** web application designed for neuroscience researchers to analyze and visualize neuroimaging data.  
+""")
+
+# Features Section
+with st.expander("Features", expanded=True):
+    st.markdown("""
+    ### Basic Analysis
+    - VBM data visualization
+    - Statistical analysis
+    - Multiple view types (Ortho, Sagittal, Coronal, Axial)
+    - Customizable colormaps
+
+    ### Advanced Meta-Analysis
+    - ALE analysis support
+    - Cluster-level corrections (FWE, FDR)
+    - P-value thresholding
+    - Results visualization and download
+
+    ### Literature Integration
+    - PubMed search integration
+    - NeuroVault database access
+    - Study information management
     """)
+
+# Installation Section
+with st.expander("Installation"):
+    st.markdown("""
+    **The application requires the following dependencies:**
+    ```bash
+    pip install streamlit nibabel nilearn numpy pandas scipy sqlalchemy matplotlib biopython requests
+    ```
+    """)
+
+# Usage Guide
+with st.expander("Usage Guide"):
+    st.markdown("""
+    ### Basic Analysis
+    1. Open the application in your browser
+    2. Select **"Basic Analysis"** from the Analysis Type dropdown
+    3. Upload your **NIfTI file** (.nii or .nii.gz)
+    4. Enter study information:
+       - Study Title
+       - Keywords
+    5. Customize visualization:
+       - View type (Ortho/Sagittal/Coronal/Axial)
+       - Color scheme
+    6. View results and statistics
+    7. Download visualization or statistics report
+
+    ### Advanced Meta-Analysis
+    1. Select **"Advanced Meta-Analysis"** from Analysis Type
+    2. Choose correction method:
+       - None
+       - **FWE** (Family-Wise Error)
+       - **FDR** (False Discovery Rate)
+    3. Set **p-value threshold** (0.01-0.10)
+    4. Upload **NIfTI file**
+    5. View results:
+       - Brain visualization
+       - Analysis details
+    6. Download results
+
+    ### Literature Search
+    1. Configure **API email** (required for first use)
+    2. Enter **search terms**
+    3. Choose search type:
+       - **PubMed:** For academic papers
+       - **NeuroVault:** For brain maps
+    4. View and interact with results
+    5. Download or visualize related data
+    """)
+
+# Technical Documentation
+with st.expander("Technical Documentation"):
+    st.markdown("""
+    ### Core Modules
+    - **app.py**: Manages user interface, file processing, and visualization
+    - **utils/meta_analysis.py**: Implements ALE analysis, statistical thresholding
+    - **utils/visualization.py**: Handles brain map visualization (View types, colormap customization)
+    - **utils/statistics.py**: Provides statistical analysis (Basic stats, cluster identification)
+    - **utils/api_integration.py**: Manages external API connections (PubMed, NeuroVault)
+    - **database.py**: Handles SQLite database storage and session management
+
+    ### Data Flow
+    1. User uploads **NIfTI file**
+    2. **Data validation** and **preprocessing**
+    3. **Analysis** (Basic or Meta)
+    4. **Results generation**
+    5. **Visualization**
+    6. **Optional:** Save results in the database
+    """)
+
+# Troubleshooting Section
+with st.expander("Troubleshooting"):
+    st.markdown("""
+    ### Common Issues
+    **1. File Upload Errors**
+    - Ensure file is in **.nii or .nii.gz** format
+    - Check **file size** (max 200MB)
+
+    **2. Analysis Failures**
+    - Verify **data format**
+    - Check **p-value threshold** settings
+    - Ensure **sufficient data points**
+
+    **3. API Connection Issues**
+    - Configure **email** in settings
+    - Check **internet connection**
+    - Verify **API access**
+
+    **4. Visualization Problems**
+    - Try different **view types**
+    - Adjust **colormap settings**
+    - Clear **browser cache**
     
-    with st.expander("Features", expanded=True):
-        st.markdown("""
-        ### Basic Analysis
-        - VBM data visualization
-        - Statistical analysis
-        - Multiple view types (ortho, sagittal, coronal, axial)
-        - Customizable colormaps
-        
-        ### Advanced Meta-Analysis
-        - ALE analysis support
-        - Cluster-level corrections (FWE, FDR)
-        - P-value thresholding
-        - Results visualization and download
-        
-        ### Literature Integration
-        - PubMed search integration
-        - NeuroVault database access
-        - Study information management
-        """)
-    
-    with st.expander("Usage Guide"):
-        st.markdown("""
-        1. **Configuration**
-           - Enter your email in the sidebar for API access
-           
-        2. **Analysis Tab**
-           - Upload your NIfTI file (.nii or .nii.gz)
-           - Choose analysis type (Basic/Advanced)
-           - Select visualization options
-           - View results and download reports
-           
-        3. **Literature Search Tab**
-           - Search PubMed and NeuroVault
-           - View and download related studies
-           - Integrate findings with your analysis
-        """)
-    
-    with st.expander("Troubleshooting"):
-        st.markdown("""
-        **Common Issues:**
-        1. File Upload Problems
-           - Ensure file format is .nii or .nii.gz
-           - Check file size limits
-           
-        2. Visualization Issues
-           - Try different view types
-           - Adjust colormap settings
-           
-        3. Search Problems
-           - Verify email configuration
-           - Check internet connection
-        """)
+    ### Need Help?
+    Contact me: **tjafar@usc.edu**
+    """)
 
 def show_welcome_message():
     """Display welcome message and instructions"""
