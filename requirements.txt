@@ -8,4 +8,4 @@ sqlalchemy>=2.0.37
 biopython>=1.85
 requests>=2.32.3
 opencv-python-headless  # Required for any GUI/image processing
-psycopg2  # Required for PostgreSQL 
+psycopg2-binary
