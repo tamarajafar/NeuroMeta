@@ -144,10 +144,10 @@ def run_analysis_tab():
     st.markdown("---")
     st.write(
     "Follow on social media (https://x.com/TamaraJafar) !"
-)
-st.markdown(
+    )
+    st.markdown(
     "More infos and :star: at [tjafar@usc.edu]"
-)
+    )
     
     if uploaded_file is not None:
         if analysis_type == "Basic Analysis":
