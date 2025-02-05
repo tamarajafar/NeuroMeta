@@ -177,7 +177,8 @@ def run_documentation_tab():
         7. Download visualization or statistics report
         """)
         
-    ### Advanced Meta-Analysis
+        st.markdown("""
+        ### Advanced Meta-Analysis
         1. Select **"Advanced Meta-Analysis"** from Analysis Type
         2. Choose correction method:
            - None
@@ -190,7 +191,8 @@ def run_documentation_tab():
            - Analysis details
         6. Download results
 
-         ### Literature Search
+        st.markdown("""
+        ### Literature Search
         1. Configure **API email** (required for first use)
         2. Enter **search terms**
         3. Choose search type:
