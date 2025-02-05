@@ -132,7 +132,7 @@ def run_literature_search_tab():
 def run_documentation_tab():
     """Display documentation and instructions"""
     st.header("📖 Documentation")
-    
+
     with st.expander("Features", expanded=True):
         st.markdown("""
         ### Basic Analysis
@@ -160,7 +160,7 @@ def run_documentation_tab():
         pip install streamlit nibabel nilearn numpy pandas scipy sqlalchemy matplotlib biopython requests
         ```
         """)
-    
+
     with st.expander("Usage Guide"):
         st.markdown("""
         ### Basic Analysis
@@ -175,9 +175,7 @@ def run_documentation_tab():
            - Color scheme
         6. View results and statistics
         7. Download visualization or statistics report
-        """)
-        
-        st.markdown("""
+
         ### Advanced Meta-Analysis
         1. Select **"Advanced Meta-Analysis"** from Analysis Type
         2. Choose correction method:
@@ -191,7 +189,6 @@ def run_documentation_tab():
            - Analysis details
         6. Download results
 
-        st.markdown("""
         ### Literature Search
         1. Configure **API email** (required for first use)
         2. Enter **search terms**
@@ -201,10 +198,10 @@ def run_documentation_tab():
         4. View and interact with results
         5. Download or visualize related data
         """)
-    
+
     with st.expander("Technical Documentation"):
         st.markdown("""
-         ### Core Modules
+        ### Core Modules
         - **app.py**: Manages user interface, file processing, and visualization
         - **utils/meta_analysis.py**: Implements ALE analysis, statistical thresholding
         - **utils/visualization.py**: Handles brain map visualization (View types, colormap customization)
@@ -212,29 +209,30 @@ def run_documentation_tab():
         - **utils/api_integration.py**: Manages external API connections (PubMed, NeuroVault)
         - **database.py**: Handles SQLite database storage and session management
         """)
-    
+
     with st.expander("Troubleshooting"):
         st.markdown("""
         ### Common Issues
+
         **1. File Upload Errors**
         - Ensure file is in **.nii or .nii.gz** format
-        - Check **file size**
-    
+        - Check **file size** (max 200MB)
+
         **2. Analysis Failures**
         - Verify **data format**
         - Check **p-value threshold** settings
         - Ensure **sufficient data points**
-    
+
         **3. API Connection Issues**
         - Configure **email** in settings
         - Check **internet connection**
         - Verify **API access**
-    
+
         **4. Visualization Problems**
         - Try different **view types**
         - Adjust **colormap settings**
         - Clear **browser cache**
-        
+
         ### Need Help?
         Contact me: **tjafar@usc.edu**
         """)
