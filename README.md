@@ -12,7 +12,7 @@ NeuroMeta is a Voxel-Based Morphometry (VBM) and Activation Likelihood Estimatio
 6. Troubleshooting
 
 ## 1. Introduction
-NeuroMeta is a powerful web application designed for neuroscience researchers to analyze and visualize brain imaging data. It supports both Voxel-Based Morphometry (VBM) and Activation Likelihood Estimation (ALE) meta-analyses.
+NeuroMeta is a powerful web application designed for neuroscience researchers to analyze and visualize brain imaging data. It supports two types of analyses Voxel-Based Morphometry (VBM), for analyzing brain structure differences, and Activation Likelihood Estimation (ALE) meta-analyses.
 
 ## 2. Features
 - Basic Analysis
