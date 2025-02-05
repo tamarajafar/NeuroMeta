@@ -216,7 +216,7 @@ def run_documentation_tab():
         ### Common Issues
         **1. File Upload Errors**
         - Ensure file is in **.nii or .nii.gz** format
-        - Check **file size** (max 200MB)
+        - Check **file size**
     
         **2. Analysis Failures**
         - Verify **data format**
