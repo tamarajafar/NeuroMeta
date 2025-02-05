@@ -82,8 +82,8 @@ def main():
     # Configure API email
     configure_api_email()
 
-    # Create tabs for different functionalities
-    tab1, tab2 = st.tabs(["Analysis", "Literature Search"])
+   # Create tabs for different functionalities
+    tab1, tab2, tab3 = st.tabs(["Analysis", "Literature Search", "Documentation"])
 
     with tab1:
         run_analysis_tab()
@@ -93,6 +93,9 @@ def main():
             run_literature_search_tab()
         else:
             st.warning("Please configure your email in the sidebar to use the literature search feature.")
+    
+    with tab3:
+        run_documentation_tab()
 
 def run_analysis_tab():
     """Main analysis functionality"""
@@ -142,7 +145,6 @@ def run_analysis_tab():
     st.sidebar.markdown("Contact Me at tjafar@usc.edu")
     st.sidebar.markdown("Follow me on [Twitter ⭐](https://x.com/TamaraJafar)!")
 
-    
     if uploaded_file is not None:
         if analysis_type == "Basic Analysis":
             process_uploaded_file(uploaded_file, title, keywords, view_type, colormap)
@@ -319,8 +321,73 @@ def process_uploaded_file(uploaded_file, title, keywords, view_type, colormap):
     except Exception as e:
         st.error(f"Error processing file: {str(e)}")
 
+def run_documentation_tab():
+    """Display documentation and instructions"""
+    st.header("Documentation")
+    
+    st.subheader("Introduction")
+    st.write("""
+    The VBM/ALE Meta-Analysis Viewer is a powerful web application designed for neuroscience researchers 
+    to analyze and visualize brain imaging data. It supports both Voxel-Based Morphometry (VBM) and 
+    Activation Likelihood Estimation (ALE) meta-analyses.
+    """)
+    
+    with st.expander("Features", expanded=True):
+        st.markdown("""
+        ### Basic Analysis
+        - VBM data visualization
+        - Statistical analysis
+        - Multiple view types (ortho, sagittal, coronal, axial)
+        - Customizable colormaps
+        
+        ### Advanced Meta-Analysis
+        - ALE analysis support
+        - Cluster-level corrections (FWE, FDR)
+        - P-value thresholding
+        - Results visualization and download
+        
+        ### Literature Integration
+        - PubMed search integration
+        - NeuroVault database access
+        - Study information management
+        """)
+    
+    with st.expander("Usage Guide"):
+        st.markdown("""
+        1. **Configuration**
+           - Enter your email in the sidebar for API access
+           
+        2. **Analysis Tab**
+           - Upload your NIfTI file (.nii or .nii.gz)
+           - Choose analysis type (Basic/Advanced)
+           - Select visualization options
+           - View results and download reports
+           
+        3. **Literature Search Tab**
+           - Search PubMed and NeuroVault
+           - View and download related studies
+           - Integrate findings with your analysis
+        """)
+    
+    with st.expander("Troubleshooting"):
+        st.markdown("""
+        **Common Issues:**
+        1. File Upload Problems
+           - Ensure file format is .nii or .nii.gz
+           - Check file size limits
+           
+        2. Visualization Issues
+           - Try different view types
+           - Adjust colormap settings
+           
+        3. Search Problems
+           - Verify email configuration
+           - Check internet connection
+        """)
+
 def show_welcome_message():
     """Display welcome message and instructions"""
+
     st.info("Please upload a NIfTI file to begin analysis")
 
     st.subheader("Example Analysis")
