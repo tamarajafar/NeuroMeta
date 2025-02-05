@@ -77,10 +77,15 @@ def load_analysis(study_id):
         db.close()
 
 def main():
-    st.title("🧠 VBM/ALE Meta-Analysis Viewer")
+    st.title("🧠 NeuroMeta: VBM/ALE Meta-Analysis Viewer")
 
     # Configure API email
     configure_api_email()
+
+    # Add footer with author information
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("Built by Tamara Jafar")
+    st.sidebar.markdown("[Contact Me](mailto:tjafar@usc.edu)")
 
     # Create tabs for different functionalities
     tab1, tab2 = st.tabs(["Analysis", "Literature Search"])
