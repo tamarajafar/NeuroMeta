@@ -165,28 +165,76 @@ def run_documentation_tab():
         st.markdown("""
         ### Basic Analysis
         1. Open the application in your browser
-        2. Select "Basic Analysis" from the dropdown
-        3. Upload your NIfTI file (.nii or .nii.gz)
-        4. Enter study information
-        5. Customize visualization
-        6. View and download results
+        2. Select **"Basic Analysis"** from the Analysis Type dropdown
+        3. Upload your **NIfTI file** (.nii or .nii.gz)
+        4. Enter study information:
+           - Study Title
+           - Keywords
+        5. Customize visualization:
+           - View type (Ortho/Sagittal/Coronal/Axial)
+           - Color scheme
+        6. View results and statistics
+        7. Download visualization or statistics report
+        """)
+        
+    ### Advanced Meta-Analysis
+        1. Select **"Advanced Meta-Analysis"** from Analysis Type
+        2. Choose correction method:
+           - None
+           - **FWE** (Family-Wise Error)
+           - **FDR** (False Discovery Rate)
+        3. Set **p-value threshold** (0.01-0.10)
+        4. Upload **NIfTI file**
+        5. View results:
+           - Brain visualization
+           - Analysis details
+        6. Download results
+
+         ### Literature Search
+        1. Configure **API email** (required for first use)
+        2. Enter **search terms**
+        3. Choose search type:
+           - **PubMed:** For academic papers
+           - **NeuroVault:** For brain maps
+        4. View and interact with results
+        5. Download or visualize related data
         """)
     
     with st.expander("Technical Documentation"):
         st.markdown("""
-        ### Core Modules
-        - **app.py**: Manages user interface and processing
-        - **utils/meta_analysis.py**: Implements ALE analysis
-        - **utils/visualization.py**: Handles visualization
-        - **database.py**: Manages SQLite storage
+         ### Core Modules
+        - **app.py**: Manages user interface, file processing, and visualization
+        - **utils/meta_analysis.py**: Implements ALE analysis, statistical thresholding
+        - **utils/visualization.py**: Handles brain map visualization (View types, colormap customization)
+        - **utils/statistics.py**: Provides statistical analysis (Basic stats, cluster identification)
+        - **utils/api_integration.py**: Manages external API connections (PubMed, NeuroVault)
+        - **database.py**: Handles SQLite database storage and session management
         """)
     
     with st.expander("Troubleshooting"):
         st.markdown("""
         ### Common Issues
-        - **File Upload Errors**: Ensure correct format and size
-        - **Analysis Failures**: Check p-value and data format
-        - **API Connection Issues**: Configure email settings
+        **1. File Upload Errors**
+        - Ensure file is in **.nii or .nii.gz** format
+        - Check **file size** (max 200MB)
+    
+        **2. Analysis Failures**
+        - Verify **data format**
+        - Check **p-value threshold** settings
+        - Ensure **sufficient data points**
+    
+        **3. API Connection Issues**
+        - Configure **email** in settings
+        - Check **internet connection**
+        - Verify **API access**
+    
+        **4. Visualization Problems**
+        - Try different **view types**
+        - Adjust **colormap settings**
+        - Clear **browser cache**
+        
+        ### Need Help?
+        Contact me: **tjafar@usc.edu**
         """)
 
 if __name__ == "__main__":
