@@ -236,6 +236,5 @@ def run_documentation_tab():
         ### Need Help?
         Contact me: **tjafar@usc.edu**
         """)
-
 if __name__ == "__main__":
     main()
