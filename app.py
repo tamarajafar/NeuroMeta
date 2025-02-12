@@ -39,7 +39,7 @@ def configure_api_email():
 def main():
     st.title("🧠 NeuroMeta: VBM/ALE Meta-Analysis Viewer")
 
-    # welcome message 
+    # Add welcome message directly under the title
     st.markdown("""
     ### 🧠 Welcome to NeuroMeta!  
     **A Web-Based Meta-Analysis Tool for Neuroimaging**  
@@ -48,22 +48,22 @@ def main():
     Whether you're conducting **Voxel-Based Morphometry (VBM)** analysis, performing **Activation Likelihood Estimation (ALE)** meta-analysis,  
     or exploring literature through **integrated PubMed & NeuroVault search**, **NeuroMeta** streamlines the process for **neuroscientists, clinicians, and students** alike.  
     """)
-    
+
     # Configure API email
     configure_api_email()
-    
+
     # Create tabs for different functionalities
     tab1, tab2, tab3 = st.tabs(["Analysis", "Literature Search", "Documentation"])
-    
+
     with tab1:
         run_analysis_tab()
-    
+
     with tab2:
         if st.session_state.email_configured:
             run_literature_search_tab()
         else:
             st.warning("Please configure your email in the sidebar to use the literature search feature.")
-    
+
     with tab3:
         run_documentation_tab()
 
