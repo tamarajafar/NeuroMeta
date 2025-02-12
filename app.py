@@ -1,4 +1,3 @@
-import streamlit as st
 import nibabel as nib
 import numpy as np
 from utils.data_processing import validate_nifti, process_vbm_data
@@ -39,6 +38,16 @@ def configure_api_email():
 
 def main():
     st.title("🧠 NeuroMeta: VBM/ALE Meta-Analysis Viewer")
+
+    # welcome message 
+    st.markdown("""
+    ### 🧠 Welcome to NeuroMeta!  
+    **A Web-Based Meta-Analysis Tool for Neuroimaging**  
+
+    🚀 **NeuroMeta** is your all-in-one platform for analyzing and visualizing **brain imaging data**.  
+    Whether you're conducting **Voxel-Based Morphometry (VBM)** analysis, performing **Activation Likelihood Estimation (ALE)** meta-analysis,  
+    or exploring literature through **integrated PubMed & NeuroVault search**, **NeuroMeta** streamlines the process for **neuroscientists, clinicians, and students** alike.  
+    """)
     
     # Configure API email
     configure_api_email()
