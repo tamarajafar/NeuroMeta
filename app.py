@@ -43,12 +43,12 @@ def main():
 
     # Add welcome message directly under the title
     st.markdown("""
-    ### 🧠 Welcome to NeuroMeta!  
-    **A Web-Based Meta-Analysis Tool for Neuroimaging**  
+    ### A Web-Based Meta-Analysis Tool for Neuroimaging
+    # **A Web-Based Meta-Analysis Tool for Neuroimaging**  
 
-    🚀 **NeuroMeta** is your all-in-one platform for analyzing and visualizing **brain imaging data**.  
-    Whether you're conducting **Voxel-Based Morphometry (VBM)** analysis, performing **Activation Likelihood Estimation (ALE)** meta-analysis,  
-    or exploring literature through **integrated PubMed & NeuroVault search**, **NeuroMeta** streamlines the process for **neuroscientists, clinicians, and students** alike.  
+    🚀 **NeuroMeta** is an all-in-one platform for analyzing and visualizing **neuroimaging data**.  
+    NeuroMeta is a web-based tool for neuroscience researchers that enables: Voxel-Based Morphometry (VBM) analysis for studying brain structure differences. Activation Likelihood Estimation (ALE) meta-analysis for aggregating neuroimaging results.
+    Integrated literature search via PubMed and NeuroVault. This tool allows researchers to upload brain imaging data, run statistical analyses, generate visualizations, and integrate neuroimaging results with published literature.
     """)
 
     # Configure API email
